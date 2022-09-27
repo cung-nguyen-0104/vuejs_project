@@ -51,19 +51,9 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSystem"
-                    aria-expanded="true" aria-controls="collapseSystem">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>System Management</span>
+                <a class="nav-link collapsed" href="{{ route('countries.index')}}">
+                    <span>Country Management</span>
                 </a>
-                <div id="collapseSystem" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="#">Country</a>
-                        <a class="collapse-item" href="#">State</a>
-                        <a class="collapse-item" href="#">Department</a>
-                        <a class="collapse-item" href="#">City</a>
-                    </div>
-                </div>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
