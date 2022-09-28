@@ -22,3 +22,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('users', Backend\UserController::class);
 Route::resource('countries', Backend\CountryController::class);
 Route::resource('states', Backend\StateController::class);
+Route::resource('cities', Backend\CityController::class);
+Route::resource('departments', Backend\DepartmentController::class);

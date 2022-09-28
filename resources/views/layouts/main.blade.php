@@ -40,14 +40,6 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('states.index')}}">
-                    <span>State Management</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
@@ -55,9 +47,34 @@
                     <span>Country Management</span>
                 </a>
             </li>
+
             <!-- Divider -->
             <hr class="sidebar-divider">
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('states.index')}}">
+                    <span>State Management</span></a>
+            </li>
+          
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('cities.index')}}">
+                    <span>City Management</span>
+                </a>
+            </li>
 
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('departments.index')}}">
+                    <span>Departments Management</span>
+                </a>
+            </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('users.index')}}">
