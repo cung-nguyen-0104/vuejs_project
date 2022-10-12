@@ -24,3 +24,6 @@ Route::resource('countries', Backend\CountryController::class);
 Route::resource('states', Backend\StateController::class);
 Route::resource('cities', Backend\CityController::class);
 Route::resource('departments', Backend\DepartmentController::class);
+Route::get('{any}', function () {
+    return view('employees.index');
+})->where('any', '.*');

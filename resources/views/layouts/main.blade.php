@@ -81,6 +81,14 @@
                     <span>Users Management</span>
                 </a>
             </li>
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="/employees">
+                    <span>Employees Management</span>
+                </a>
+            </li>
         </ul>
         <!-- End of Sidebar -->
 
