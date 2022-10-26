@@ -6,9 +6,10 @@
           <form>
             <div class="form-row align-items-center">
               <div class="col">
+                <!-- thêm lazy là gõ xong sẽ search, còn k thêm thì gõ đến đâu search đến đấy -->
                 <input
                   type="search"
-                  name="search"
+                  v-model.lazy="search"
                   class="form-control mb-2"
                   id="inlineFormInput"
                   placeholder="Jane Doe"
@@ -23,6 +24,22 @@
           </form>
         </div>
       </div>
+      <div class="col">
+        <select
+          name="department"
+          class="form-control"
+          aria-label="Default select example"
+          v-model="selectDepartment"
+        >
+          <option
+            v-for="(department, index) in departments"
+            :key="index"
+            :value="department.id"
+          >
+            {{ department.name }}
+          </option>
+        </select>
+      </div>
       <router-link
         :to="{ name: 'EmployeesCreate' }"
         class="btn btn-outline-success px-5"
@@ -30,7 +47,7 @@
       >
     </div>
     <div v-if="showMessage">
-      <div class="alert alert-success">{{message}}</div>
+      <div class="alert alert-success">{{ message }}</div>
     </div>
     <div class="row">
       <table class="table table-striped">
@@ -57,7 +74,12 @@
                 class="btn btn-outline-success px-5"
                 >Edit</router-link
               >
-              <button class="btn btn-outline-danger px-5" @click="deleteEmployee(employee.id)"> Delete</button>
+              <button
+                class="btn btn-outline-danger px-5"
+                @click="deleteEmployee(employee.id)"
+              >
+                Delete
+              </button>
             </td>
           </tr>
         </tbody>
@@ -72,19 +94,33 @@ export default {
     return {
       employees: [],
       showMessage: false,
-      message: ''
+      message: "",
+      search: null,
+      departments: [],
+      selectDepartment: null,
     };
   },
   created() {
     this.getEmployees();
+    this.getDepartments();
+  },
+  watch: {
+    search() {
+      this.getEmployees();
+    },
+    selectDepartment() {
+      this.getEmployees();
+    }
   },
   methods: {
     getEmployees() {
       axios
-        .get("/api/employees")
+        .get("/api/employees", {params: {
+          search: this.search,
+          department_id: this.selectDepartment
+        }})
         .then((res) => {
           this.employees = res.data.data;
-          console.log(res);
         })
         .catch((err) => {
           console.log(err);
@@ -101,7 +137,17 @@ export default {
         .catch((err) => {
           console.log(err);
         });
-    }
+    },
+    getDepartments() {
+      axios
+        .get("/api/employees/departments")
+        .then((res) => {
+          this.departments = res.data;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
 };
 </script>

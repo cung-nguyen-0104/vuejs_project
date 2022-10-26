@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmployeeStoreRequest;
 use App\Http\Resources\EmployeeResource;
+use App\Http\Resources\EmployeeSingleResource;
 use App\Models\Employee;
 
 class EmployeeController extends Controller
@@ -15,9 +16,18 @@ class EmployeeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $employees = Employee::all();
+
+        if ($request->search) {
+            $employees = Employee::where('first_name', "like", "%{$request->search}%")
+            ->orWhere('last_name', "like", "%{$request->search}%")
+            ->get();
+        } elseif ($request->department_id) {
+            $employees = Employee::where('department_id', $request->department_id)->get();
+        }
+       
 
         return EmployeeResource::collection($employees);
     }
@@ -51,9 +61,9 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Employee $employee)
     {
-        //
+        return new EmployeeSingleResource($employee);
     }
 
     /**
@@ -74,9 +84,9 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(EmployeeStoreRequest $request, Employee $employee)
     {
-        //
+        $employee->update($request->validated());
     }
 
     /**
@@ -89,6 +99,6 @@ class EmployeeController extends Controller
     {
         $employee->delete();
 
-        return response()->json('Delete successfull!');
+        return response()->json('Employee Deleted successfully!');
     }
 }
