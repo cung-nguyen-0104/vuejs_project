@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('countries.index')}}">
+                <a class="nav-link collapsed" href="/countries">
                     <span>Country Management</span>
                 </a>
             </li>
