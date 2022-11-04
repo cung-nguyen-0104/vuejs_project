@@ -2,6 +2,7 @@
 use App\Http\Controllers\Api\EmployeeDataController;
 use App\Http\Controllers\Api\EmployeeController;
 use App\Http\Controllers\Api\CountryController;
+use App\Http\Controllers\Api\StateController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -38,3 +39,10 @@ Route::get('/countries/{country}', [CountryController::class, 'show']);
 Route::put('/countries/{country}', [CountryController::class, 'update']);
 Route::post('/countries', [CountryController::class, 'store']);
 Route::delete('/countries/{country}', [CountryController::class, 'destroy']);
+
+
+Route::get('/states', [StateController::class, 'index']);
+Route::get('/states/{state}', [StateController::class, 'show']);
+Route::put('/states/{state}', [StateController::class, 'update']);
+Route::post('/states', [StateController::class, 'store']);
+Route::delete('/states/{state}', [StateController::class, 'destroy']);

@@ -4,6 +4,9 @@ import EmployeesEdit from "./components/employees/Edit";
 import CountriesIndex from "./components/countries/Index";
 import CountriesCreate from "./components/countries/Create";
 import CountriesEdit from "./components/countries/Edit";
+import StatesIndex from "./components/states/Index";
+import StatesCreate from "./components/states/Create";
+import StatesEdit from "./components/states/Edit";
 
 export const routes = [
     {
@@ -35,5 +38,20 @@ export const routes = [
         path: "/countries/:id",
         name: "CountriesEdit",
         component: CountriesEdit
+    },
+    {
+        path: "/states",
+        name: "StatesIndex",
+        component: StatesIndex
+    },
+    {
+        path: "/states/create",
+        name: "StatesCreate",
+        component: StatesCreate
+    },
+    {
+        path: "/states/:id",
+        name: "StatesEdit",
+        component: StatesEdit
     },
 ];

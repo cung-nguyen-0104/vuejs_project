@@ -52,7 +52,7 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('states.index')}}">
+                <a class="nav-link" href="/states">
                     <span>State Management</span></a>
             </li>
           
