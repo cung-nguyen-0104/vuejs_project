@@ -69,7 +69,7 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('departments.index')}}">
+                <a class="nav-link collapsed" href="departments">
                     <span>Departments Management</span>
                 </a>
             </li>

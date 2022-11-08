@@ -10,6 +10,9 @@ import StatesEdit from "./components/states/Edit";
 import CitiesIndex from "./components/cities/Index";
 import CitiesCreate from "./components/cities/Create";
 import CitiesEdit from "./components/cities/Edit";
+import DepartmentsIndex from "./components/departments/Index";
+import DepartmentsCreate from "./components/departments/Create";
+import DepartmentsEdit from "./components/departments/Edit";
 
 export const routes = [
     {
@@ -71,5 +74,20 @@ export const routes = [
         path: "/cities/:id",
         name: "CitiesEdit",
         component: CitiesEdit
+    },
+    {
+        path: "/departments",
+        name: "DepartmentsIndex",
+        component: DepartmentsIndex
+    },
+    {
+        path: "/departments/create",
+        name: "DepartmentsCreate",
+        component: DepartmentsCreate
+    },
+    {
+        path: "/departments/:id",
+        name: "DepartmentsEdit",
+        component: DepartmentsEdit
     },
 ];
