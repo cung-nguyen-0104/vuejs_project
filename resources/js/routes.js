@@ -7,6 +7,9 @@ import CountriesEdit from "./components/countries/Edit";
 import StatesIndex from "./components/states/Index";
 import StatesCreate from "./components/states/Create";
 import StatesEdit from "./components/states/Edit";
+import CitiesIndex from "./components/cities/Index";
+import CitiesCreate from "./components/cities/Create";
+import CitiesEdit from "./components/cities/Edit";
 
 export const routes = [
     {
@@ -53,5 +56,20 @@ export const routes = [
         path: "/states/:id",
         name: "StatesEdit",
         component: StatesEdit
+    },
+    {
+        path: "/cities",
+        name: "CitiesIndex",
+        component: CitiesIndex
+    },
+    {
+        path: "/cities/create",
+        name: "CitiesCreate",
+        component: CitiesCreate
+    },
+    {
+        path: "/cities/:id",
+        name: "CitiesEdit",
+        component: CitiesEdit
     },
 ];

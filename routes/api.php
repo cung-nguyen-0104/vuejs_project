@@ -3,6 +3,7 @@ use App\Http\Controllers\Api\EmployeeDataController;
 use App\Http\Controllers\Api\EmployeeController;
 use App\Http\Controllers\Api\CountryController;
 use App\Http\Controllers\Api\StateController;
+use App\Http\Controllers\Api\CityController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -46,3 +47,9 @@ Route::get('/states/{state}', [StateController::class, 'show']);
 Route::put('/states/{state}', [StateController::class, 'update']);
 Route::post('/states', [StateController::class, 'store']);
 Route::delete('/states/{state}', [StateController::class, 'destroy']);
+
+Route::get('/cities', [CityController::class, 'index']);
+Route::get('/cities/{city}', [CityController::class, 'show']);
+Route::put('/cities/{city}', [CityController::class, 'update']);
+Route::post('/cities', [CityController::class, 'store']);
+Route::delete('/cities/{city}', [CityController::class, 'destroy']);

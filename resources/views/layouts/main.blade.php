@@ -60,7 +60,7 @@
             <hr class="sidebar-divider">
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('cities.index')}}">
+                <a class="nav-link collapsed" href="/cities">
                     <span>City Management</span>
                 </a>
             </li>
